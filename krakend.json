@@ -1,0 +1,43 @@
+{
+  "name": "KrakenD API Gateway",
+  "$id": "https://www.krakend.io/schema/v3.json",
+  "version": 3,
+  "port": 8080,
+  "endpoints": [
+    {
+      "endpoint": "/ok",
+      "backend": [
+        {
+          "host": ["http://fake_api"],
+          "url_pattern": "/index.php",
+          "group": "a"
+        },
+        {
+          "host": ["http://fake_api"],
+          "url_pattern": "/index.php",
+          "group": "b"
+        }
+      ]
+    },
+    {
+      "endpoint": "/ko",
+      "backend": [
+        {
+          "host": ["http://fake_api"],
+          "url_pattern": "/index.php",
+          "group": "a"
+        },
+        {
+          "host": ["http://fake_api"],
+          "url_pattern": "/index.php?status=ko",
+          "group": "b",
+          "extra_config": {
+            "backend/http": {
+              "return_error_details": "backend_GetSubscriptionBalanceResponse"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
