@@ -1,4 +1,4 @@
-# KrakenD Test
+# KrakenD - Return error details
 
 Test environment to validate `X-KrakenD-Completed` headers and `return_error_details` KrakenD config parameter.
 
