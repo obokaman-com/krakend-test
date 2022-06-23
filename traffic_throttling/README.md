@@ -2,7 +2,7 @@
 
 Test environment to test some traffic throttling features of KrakenD.
 
-You can run the environment with `docker-compose up`
+You can run the environment with `docker-compose up`. To follow KrakenD logs on terminal you can run `docker-compose logs -f krakend`
 
 ### Root Endpoint
 
